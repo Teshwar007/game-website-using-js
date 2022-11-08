@@ -1,6 +1,8 @@
 let totaltokens = document.querySelector("#totaltokens");
 let g1tokens = document.querySelector("#g1tokens");
 let g2tokens = document.querySelector("#g2tokens");
+localStorage.setItem("dldStarted", "");
+localStorage.setItem("tvstarted", "");
 
 let tt = Number(localStorage.getItem("gT"));
 let g1t = Number(localStorage.getItem("g1") ?? 0);
