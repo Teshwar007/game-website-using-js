@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container" style="margin-top: 20px;">
+
+        <div style="display: flex; justify-content: end; align-items: center;">
+            <span id="balance">Balance: <span id="totaltokens"></span> </span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <button type="button" class="btn btn-light btn-sm" data-toggle="modal"
+                data-target="#myModal">&plus;</button>
+        </div>
+        <div class="d-flex justify-content-center">
+
+
+            <div class="card" style="display: flex; justify-content: center; align-items: center;">
+                <img style="
+                        width:50px;
+                        height: 50px;
+                        border-radius: 6px;
+                      "
+                    src="https://media.istockphoto.com/id/1064066314/vector/trivia.jpg?s=612x612&w=0&k=20&c=2nOgYEDjvuopbzXcReqnt7nCNKdWROLQ8uQFIGch3kE="
+                    class="card-img-top" alt="...">
+                <div class="card-body" style="margin-left: 15px;">
+                    <a href="trivia.html" style="text-decoration:none; color:#000"></a>
+                    <h5 class="card-title">Trivia Game</h5>
+                    </a>
+                    <h6 class="card-subtitle mb-2 text-muted">Available tokens: <span
+                            id="g1tokens"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <button type="button" class="btn btn-light btn-sm" data-toggle="modal"
+                            data-target="#splitTokenModal" onclick="splitHandler">&plus;</button>
+                    </h6>
+
+                </div>
+            </div>
+
+            <div class="card" style="display: flex; justify-content: center; align-items: center;">
+                <img style="
+                        width:50px;
+                        height: 50px;
+                        border-radius: 6px;
+                        "
+                    src="https://media.istockphoto.com/id/1064066314/vector/trivia.jpg?s=612x612&w=0&k=20&c=2nOgYEDjvuopbzXcReqnt7nCNKdWROLQ8uQFIGch3kE="
+                    class="card-img-top" alt="...">
+                <div class="card-body" style="margin-left: 10px;">
+                    <a href="deal-or-no-deal.html" style="text-decoration:none; color:#000">
+                        <h5 class="card-title">Deal Or No Deal </h5>
+                    </a>
+                    <h6 class="card-subtitle mb-2 text-muted">Available tokens: <span
+                            id="g2tokens"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <button type="button" class="btn btn-light btn-sm" data-toggle="modal"
+                            data-target="#split2TokenModal" onclick="splitHandler">&plus;</button>
+                    </h6>
+
+                </div>
+            </div>
+
+
+        </div>
+
+
+        <!-- add tokens modal -->
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Add tokens</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-inline" action="/action_page.php">
+                            <div class="form-group">
+                                <label for="tokenInput">Tokens:</label>
+                                <input type="text" class="form-control" id="tokenInput">
+                            </div>
+                            <div class="form-group" style="display:none;">
+                                <label for="pwd">Password:</label>
+                                <input type="password" class="form-control" id="pwd">
+                            </div>
+
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button id="add" class="btn btn-success">Add</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="modal fade" id="splitTokenModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Split tokens</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-inline" action="/action_page.php">
+                            <div class="form-group">
+                                <label for="tokenInput">Tokens:</label>
+                                <input type="text" class="form-control" id="splittokenInput">
+                            </div>
+                            <div class="form-group" style="display:none;">
+                                <label for="pwd">Password:</label>
+                                <input type="password" class="form-control" id="pwd">
+                            </div>
+
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button id="g1split" class="btn btn-success">Split</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="modal fade" id="split2TokenModal" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Split tokens</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-inline" action="/action_page.php">
+                            <div class="form-group">
+                                <label for="split2tokenInput">Tokens:</label>
+                                <input type="text" class="form-control" id="split2tokenInput">
+                            </div>
+                            <div class="form-group" style="display:none;">
+                                <label for="pwd">Password:</label>
+                                <input type="password" class="form-control" id="pwd">
+                            </div>
+
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button id="g2split" class="btn btn-success">Split</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="../js/hompage.js"></script>
+</body>
+
+</html>
