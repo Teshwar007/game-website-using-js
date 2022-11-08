@@ -10,9 +10,17 @@
 </head>
 
 <body>
-    <h1>Let's Play!</h1>
-    <div id="game"></div>
-    <h2>Score:<span id="score">0</span></h2>
+    <div class="container outer-container">
+        <div class="d-flex justify-content-center text-center">
+            <h1>Let's Play!</h1>
+            <h5>Available tokens: <span id="triviatokens"></span></h5>
+        </div>
+        <h4>Score:<span id="score">0</span></h4>
+        <div id="game"></div>
+        <div id="buttonDiv">
+            <button id="gameButton">Start Playing</button>
+        </div>
+    </div>
     <script src="../js/trivia.js"></script>
 </body>
 
