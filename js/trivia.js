@@ -131,7 +131,7 @@ function flipCard() {
   let cardOpened = Number(localStorage.getItem("open") ?? 0);
   console.log("cardOpened: ", cardOpened);
   localStorage.setItem("open", cardOpened + 1);
-  if (cardOpened === 1) {
+  if (cardOpened === 11) {
     let btnDiv = document.querySelector("#buttonDiv");
     let resetButton = document.getElementById("reset");
     let finishbtn = document.createElement("button");
