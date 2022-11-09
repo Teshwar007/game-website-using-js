@@ -1,0 +1,299 @@
+.container {
+    background: linear-gradient(rgb(246, 221, 78), rgb(244, 136, 47));
+    border: 2px solid rgb(24, 23, 23);
+    height: 300px;
+    justify-content: center;
+    width: 100%;
+    
+}
+.card{
+    border: 2px solid rgb(20, 16, 16);
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+
+
+}
+.card1{
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    background-color: black; 
+    border: 2px solid rgb(242, 173, 11);
+}
+img{
+    width:80px;
+    height: 80px;
+    border-radius: 8px;
+}
+html{
+    min-height: 100%;
+    min-height: 100%;
+   background-image: url(back1.webp);
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center center;
+}
+body{
+	margin: 0;
+	padding: 0;
+}
+
+
+/* sticks  */
+.box {
+	position: fixed;
+    transform: rotate(70deg);
+	top: 0;
+	right: 0;
+}
+
+.class{
+	position: fixed;
+	top: 0;
+	left: 0;
+    opacity: .8;
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    background: rgb(249, 164, 6);
+    width: 400px;
+    height: 50px;
+    animation: drift 3100ms infinite linear; 
+}
+.class.-five {
+    animation: drift 2500ms infinite linear;
+    opacity: .7;
+    background-color: rgb(12, 12, 12);
+      position: fixed;
+  }
+.class.-four {
+    animation: drift 1900ms infinite linear;
+    opacity: .7;
+    background-color: rgb(240, 175, 8);
+      position: fixed;
+  }
+
+.class.-three {
+  animation: drift 1300ms infinite linear;
+	position: fixed;
+	background-color: #080808;
+}
+
+.class.-two {
+  animation: drift 700ms infinite linear;
+  opacity: .7;
+  background-color: rgb(237, 185, 14);
+    position: fixed;
+}
+
+.box:after {
+  content: '';
+  display: block;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 11;
+  transform: translate3d(0, 0, 0);
+}
+
+@keyframes drift {
+  from { transform: rotate(0deg); }
+  from { transform: rotate(360deg); }
+}
+
+
+/* space for loading */
+.contain {
+	animation-delay: 8s;
+	z-index: 2000;
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+    display: flex;
+    -ms-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+
+    /* background: #25d751;
+    background: -webkit-linear-gradient(#25d75a, #afe608);
+    background: linear-gradient(#05f283, #79e910); */
+    }
+
+.icon {
+  width: 100px;
+  height: 100px;
+  margin: 0 5px;
+}
+
+.icon:nth-child(2) img {-webkit-animation-delay: 0.2s;animation-delay: 0.4s}
+.icon:nth-child(3) img {-webkit-animation-delay: 0.3s;animation-delay: 0.5s}
+.icon:nth-child(4) img {-webkit-animation-delay: 0.4s;animation-delay: 0.4s}
+
+.icon img {
+  -webkit-animation: anim 2s ease infinite;
+  animation: anim 2s ease infinite;
+  -webkit-transform: scale(0,0) rotateZ(180deg);
+  transform: scale(0,0) rotateZ(180deg);
+}
+
+
+@keyframes anim{
+  0% {
+    -webkit-transform: scale(0,0) rotateZ(-90deg);
+    transform: scale(0,0) rotateZ(-90deg);opacity:0
+  }
+  30% {
+    -webkit-transform: scale(1,1) rotateZ(0deg);transform: scale(1,1) rotateZ(0deg);opacity:1
+  }
+  50% {
+    -webkit-transform: scale(1,1) rotateZ(0deg);
+    transform: scale(1,1) rotateZ(0deg);opacity:1
+  }
+  80% {
+    -webkit-transform: scale(0,0) rotateZ(90deg);
+    transform: scale(0,0) rotateZ(90deg);opacity:0
+  }
+}
+
+
+
+.box1 {
+	position: fixed;
+    transform: rotate(95deg);
+	top: 0;
+	left: 0;
+}
+
+.class1{
+	position: fixed;
+	top: 0;
+	left: 0;
+    opacity: .8;
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    background: rgb(249, 172, 6);
+    width: 400px;
+    height: 50px;
+    animation: drift 3100ms infinite linear; 
+}
+.class1.-five {
+    animation: drift 2500ms infinite linear;
+    opacity: .7;
+    background-color: rgb(16, 12, 1);
+      position: fixed;
+  }
+.class1.-four {
+    animation: drift 1900ms infinite linear;
+    opacity: .7;
+    background-color: rgb(213, 146, 3);
+      position: fixed;
+  }
+
+.class1.-three {
+  animation: drift 1300ms infinite linear;
+	position: fixed;
+	background-color: #0b0c01;
+}
+
+.class1.-two {
+  animation: drift 700ms infinite linear;
+  opacity: .7;
+  background-color: rgb(242, 186, 2);
+    position: fixed;
+}
+
+.box1:after {
+  content: '';
+  display: block;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 11;
+  transform: translate3d(0, 0, 0);
+}
+
+@keyframes drift1 {
+  from { transform: rotate(0deg); }
+  from { transform: rotate(360deg); }
+}
+
+
+/* space for loading */
+.contain {
+	animation-delay: 8s;
+	z-index: 2000;
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+    display: flex;
+    -ms-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+
+    /* background: #25d751;
+    background: -webkit-linear-gradient(#25d75a, #afe608);
+    background: linear-gradient(#05f283, #79e910); */
+    }
+
+.icon1 {
+  width: 100px;
+  height: 100px;
+  margin: 0 5px;
+}
+
+.icon:nth-child(2) img {-webkit-animation-delay: 0.2s;animation-delay: 0.4s}
+.icon:nth-child(3) img {-webkit-animation-delay: 0.3s;animation-delay: 0.5s}
+.icon:nth-child(4) img {-webkit-animation-delay: 0.4s;animation-delay: 0.4s}
+
+.icon1 img {
+  -webkit-animation: anim1 2s ease infinite;
+  animation: anim1 2s ease infinite;
+  -webkit-transform: scale(0,0) rotateZ(180deg);
+  transform: scale(0,0) rotateZ(180deg);
+}
+
+
+@keyframes anim1{
+  0% {
+    -webkit-transform: scale(0,0) rotateZ(-90deg);
+    transform: scale(0,0) rotateZ(-90deg);opacity:0
+  }
+  30% {
+    -webkit-transform: scale(1,1) rotateZ(0deg);transform: scale(1,1) rotateZ(0deg);opacity:1
+  }
+  50% {
+    -webkit-transform: scale(1,1) rotateZ(0deg);
+    transform: scale(1,1) rotateZ(0deg);opacity:1
+  }
+  80% {
+    -webkit-transform: scale(0,0) rotateZ(90deg);
+    transform: scale(0,0) rotateZ(90deg);opacity:0
+  }
+}
+
+
+
+
+
