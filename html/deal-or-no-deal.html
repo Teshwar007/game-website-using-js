@@ -10,7 +10,7 @@
 
 <body>
     <div id="logo">
-        <img class="logoImg" src="https://i.ibb.co/kKpRnSk/dealLogo.png">
+        <img class="logoImg" src="https://static.wikia.nocookie.net/logopedia/images/f/fa/DealOrNotDealAustralia2003.svg/revision/latest/scale-to-width-down/250?cb=20200614144818">
     </div>
     <div id="boxContainer">
         <div class="box"><span class="boxNr">1</span><span class="boxValue"></span></div>
@@ -26,7 +26,13 @@
         <div class="box"><span class="boxNr">11</span><span class="boxValue"></span></div>
         <div class="box"><span class="boxNr">12</span><span class="boxValue"></span></div>
     </div>
-    <div id="smallMoneys" class="moneys">
+    <div id="smoneys" class="moneys">
+        <div class="moneyShow"></div>
+        <div class="moneyShow"></div>
+        <div class="moneyShow"></div>
+        <div class="moneyShow"></div>
+        <div class="moneyShow"></div>
+        <div class="moneyShow"></div>
         <div class="moneyShow"></div>
         <div class="moneyShow"></div>
         <div class="moneyShow"></div>
@@ -34,26 +40,16 @@
         <div class="moneyShow"></div>
         <div class="moneyShow"></div>
     </div>
-    <div id="bigMoneys" class="moneys">
-        <div class="moneyShow"></div>
-        <div class="moneyShow"></div>
-        <div class="moneyShow"></div>
-        <div class="moneyShow"></div>
-        <div class="moneyShow"></div>
-        <div class="moneyShow"></div>
-    </div>
-
     <div id="button" style="display: flex;justify-content: center;align-items: center;">
         <button style="color:black; font-size: 16px;" id="startGame">Start Game</button>
     </div>
     <div id="bank">
-        <div id="bankContent">
-            <img class="bankLogo" src="https://i.ibb.co/s9HN0Xn/bankimg.png">
-            <div class="bankTitle">The bank offers you:</div>
+        <div id="content">
+            <div class="offerTitle">We offer you:</div>
             <div class="bankOffer"></div>
             <button id="yesDeal" class="buttons">Deal</button>
             <button id="noDeal" class="buttons">No Deal</button>
-            <div id="prevOffers">Previous Offers: none</div>
+            <div id="prevOffers" style="color:white;">Previous Offers: none</div>
         </div>
     </div>
     <div id="finished">
@@ -84,34 +80,6 @@
             <button class="chooseBoxButton">10</button>
             <button class="chooseBoxButton">11</button>
             <button class="chooseBoxButton">12</button>
-            <div>
-                <button id="seeTutorialButton">See Tutorial</button>
-            </div>
-        </div>
-    </div>
-    <div id="tutorial">
-        <div id="tutorialContainer">
-            <img class="logoImg" src="dealLogo.png">
-            <div class="text">
-                <ol>
-                    <li>Pick a box from 1-12 where you think the $1 000 000 is hiding.</li>
-                    <li>Open boxes that you think have lower amounts. The money in the opened boxes is removed.</li>
-                    <li>Every few boxes you open (5, 10), the bank offers a deal. You have two options:
-                        <ul>
-                            <li>Take the deal: the game is over and you walk out with the deal amount.</li>
-                            <li>Decline the deal: continue opening more boxes.</li>
-                        </ul>
-                    </li>
-                    <li>Once only 2 boxes remain (the one you picked and one other box), you again have two options:
-                        <ul>
-                            <li>Keep the box you chose.</li>
-                            <li>Change your box for the other box.</li>
-                        </ul>
-                    </li>
-                </ol>
-                <p>*Disclaimer: You don't actually win the money!</p>
-                <button id="tutorialButton" class="buttons">Got It!</button>
-            </div>
         </div>
     </div>
 

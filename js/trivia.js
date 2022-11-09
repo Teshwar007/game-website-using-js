@@ -4,21 +4,19 @@ let triviatokens = document.querySelector("#triviatokens");
 triviatokens.innerHTML = cgt ?? 0;
 
 let gameStarted = Boolean(localStorage.getItem("tvstarted")) ?? false;
-
+let flag = false
 const startGame = () => {
   if (cgt < 200) {
     alert("Not enough tokens please add tokens and come back");
     return;
   }
-  if (
-    window.confirm("you will charged a sum of 200 tokens to play this game")
-  ) {
+  if (confirm("you will charged a sum of 200 tokens to play this game")) {
     let dedtoken = cgt - 200;
     localStorage.setItem("g1", dedtoken);
 
     triviatokens.innerHTML = dedtoken ?? 0;
     gameStarted = true;
-
+    flag = true
     let btnDiv = document.querySelector("#buttonDiv");
     localStorage.setItem("open", 0);
     console.log("btnDiv: ", btnDiv);
@@ -35,6 +33,7 @@ const startGame = () => {
     btnDiv.removeChild(startBtn);
     btnDiv.appendChild(resetButton);
     localStorage.setItem("tvstarted", true);
+    genres.forEach((genre) => addGenre(genre,true));
   }
 };
 gameButton.addEventListener("click", startGame);
@@ -63,7 +62,7 @@ const genres = [
 
 const levels = ["easy", "medium", "hard"];
 
-function addGenre(genre) {
+function addGenre(genre,flag) {
   const column = document.createElement("div");
   column.classList.add("genre-column");
   column.innerHTML = genre.name;
@@ -100,16 +99,15 @@ function addGenre(genre) {
         card.setAttribute("data-answer", data.results[0].correct_answer);
         card.setAttribute("data-value", card.getInnerHTML());
       })
-      .then((done) =>
-        card.addEventListener("click", gameStarted ? flipCard : gameNotStarted)
-      );
+      .then((done) =>{
+        card.addEventListener("click", flag ? flipCard : gameNotStarted)
+    });
   });
 }
 const gameNotStarted = () => {
   alert("Please start the game");
   return;
 };
-genres.forEach((genre) => addGenre(genre));
 
 function flipCard() {
   this.innerHTML = "";
@@ -150,7 +148,7 @@ function flipCard() {
       let totalwinTokens = totaltokens + ct + score;
       localStorage.setItem("gT", totalwinTokens);
       localStorage.setItem("g1", 0);
-      window.location("/p1.html");
+      window.location.href = "p1.html";
     });
     btnDiv.removeChild(resetButton);
     btnDiv.appendChild(finishbtn);

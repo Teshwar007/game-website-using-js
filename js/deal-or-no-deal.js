@@ -1,6 +1,6 @@
-//create an array that contains the values
-var moneyValues = [1, 5, 7, 10, 25, 50, 75, 100, 250, 500, 750, 50000, 75000];
-//all elements
+// Eshwar Prasad Thamburi
+// CWID: 10394975
+var moneyValues = [1, 5, 7, 10, 25, 50, 75, 100, 250, 500, 750, 50000, 75000];// Money values
 var boxes = document.querySelectorAll(".box");
 var boxNr = document.querySelectorAll(".boxNr");
 var boxValue = document.querySelectorAll(".boxValue");
@@ -22,17 +22,16 @@ var changeBox = document.getElementById("changeBox");
 var winningBox = 0;
 var chooseBox = document.getElementById("chooseBox");
 var chooseBoxButton = document.querySelectorAll(".chooseBoxButton");
-var tutorial = document.getElementById("tutorial");
-var seeTutorialButton = document.getElementById("seeTutorialButton");
-let gameStarted = Boolean(localStorage.getItem("dldStarted") ?? false);
-console.log("gameStarted: ", gameStarted);
-if (!gameStarted) {
+
+let gameStarted = Boolean(localStorage.getItem("dldStarted") ?? false); // to define the game started state
+// console.log("gameStarted: ", gameStarted);
+if (!gameStarted) { // To pop the alert to click start button
   for (var i = 0; i < boxes.length; i++) {
     boxes[i].addEventListener("click", () => {
       if (!gameStarted) alert("Please start the game");
     });
   }
-} else {
+} else { // if game is started then activate reset button and choose box
   let btnDiv = document.querySelector("#button");
   let startBtn = document.getElementById("startGame");
   let resetButton = document.createElement("button");
@@ -48,7 +47,7 @@ if (!gameStarted) {
   btnDiv.appendChild(resetButton);
   addValuesNStuff();
 }
-if (gameStarted) {
+if (gameStarted) { //
   let btnDiv = document.querySelector("#button");
   let startBtn = document.getElementById("startGame");
   let resetButton = document.createElement("button");
@@ -64,15 +63,8 @@ if (gameStarted) {
   btnDiv.appendChild(resetButton);
 }
 
-//option to see tutorial
-seeTutorialButton.addEventListener("click", function () {
-  tutorial.style.display = "block";
-});
-//close tutorial
-tutorialButton.addEventListener("click", function () {
-  tutorial.style.display = "none";
-});
-//choosing a box
+
+//Functionality to choose box 
 function chooseBox() {
   chooseBox.style.display = "block";
   for (var i = 0; i < chooseBoxButton.length; i++) {
@@ -85,43 +77,32 @@ function chooseBox() {
     });
   }
 }
-//money displays style
+//To display money style
 var fr = 0;
-var fg = 30;
+var fg = 20;
 var fb = 79;
-var sr = 200;
-var sg = 15;
-var sb = 0;
-for (var i = 0; i < moneyShow.length; i++) {
+for (var i = 0; i < moneyShow.length; i++) { /// This is to fade out the selected money value by calling it
   var moneyDisplay = "$" + moneyValues[i];
   moneyShow[i].textContent = moneyDisplay;
-  if (i < moneyShow.length / 2) {
-    moneyShow[i].classList.add("rounded1");
-    moneyShow[i].style.backgroundColor =
-      "rgb(" + fr + ", " + fg + ", " + fb + ")";
-    fb += 8;
-    fg += 5;
-  } else {
-    moneyShow[i].classList.add("rounded2");
-    moneyShow[i].style.backgroundColor =
-      "rgb(" + sr + ", " + sg + ", " + sb + ")";
-    sr -= 12;
-    sg -= 1;
-  }
+  moneyShow[i].classList.add("rounded1");
+  moneyShow[i].style.backgroundColor =
+    "rgb(" + fr + ", " + fg + ", " + fb + ")";
+  fb += 8;
+  fg += 5;
 }
-//shuffle values
+//To randomly swap values using shuffle array
 var shuffledValues = shuffleArray(moneyValues);
 
 let cgt = Number(localStorage.getItem("g2"));
 console.log("cgt: ", cgt);
 if (cgt < 200) {
   if (window.confirm("You don't have enough tokens to play this game")) {
-    window.location.href = "/html/p1.html";
+    window.location.href = "p1.html";
   } else {
-    window.location.href = "/html/p1.html";
+    window.location.href = "p1.html";
   }
 } else {
-  //choose a box
+  //Functionality to choose a box
 
   let startButton = document.querySelector("#startGame");
   startButton.addEventListener("click", () => {
@@ -156,20 +137,20 @@ if (cgt < 200) {
         });
       }
     } else {
-      window.location.href = "/html/p1.html";
+      window.location.href = "p1.html";
     }
   });
 }
-//main game logic
+//The game logic is here
 function addValuesNStuff() {
   for (var i = 0; i < boxes.length; i++) {
-    //assign values to boxes and hide them
+    // to assign values  and hide the boxes
     boxValue[i].textContent = "$" + shuffledValues[i];
     boxValue[i].classList.add("hideValue");
-    //open box
+    //To reveal box
     (function (j) {
       if (chosenBox !== boxNr[j].textContent) {
-        //opening boxes logic
+        //To open boxes
         boxes[j].addEventListener(
           "click",
           function () {
@@ -178,13 +159,13 @@ function addValuesNStuff() {
             boxNr[j].classList.add("hideValue");
             this.classList.add("openedBox");
             openedBoxes++;
-            //remove opened boxes amounts from the array
+            //To remove the boxes from array
             for (var i = 0; i < shuffledValues.length; i++) {
               if ("$" + shuffledValues[i] === boxValue[j].textContent) {
                 shuffledValues.splice([i], 1);
               }
             }
-            //remove opened boxes amounts from display
+            //To remove the boxes from display
             for (var i = 0; i < moneyShow.length; i++) {
               if (moneyShow[i].textContent === boxValue[j].textContent) {
                 if (i < moneyShow.length / 2) {
@@ -194,13 +175,13 @@ function addValuesNStuff() {
                 }
               }
             }
-            //show bank offer
+            //show  offer
             if (openedBoxes === 5 || openedBoxes === 10) {
               calcOffer();
               show(bank);
               animateValue(bankOffer, 0, calcOffer(), 1000);
             }
-            //if two boxes remain, prompt user to pick one of the boxes
+            //ask user to click one box if two are remaining
             if (openedBoxes === 10) {
               winnings.textContent = winningBox;
               lastDeal.style.display = "block";
@@ -217,7 +198,7 @@ function addValuesNStuff() {
     })(i);
   }
 }
-//bank offer logic
+//The offer logic
 noDeal.addEventListener("click", function () {
   bank.style.display = "none";
   previousOffers.push(bankOffer.textContent);
@@ -229,7 +210,7 @@ yesDeal.addEventListener("click", function () {
   console.log("bankOffer.textContent: ", bankOffer.textContent.split("$")[1]);
   finish(Number(bankOffer.textContent.split("$")[1] ?? 0));
 });
-//keeping or changing box logic
+//changing box logic
 keepBox.addEventListener("click", function () {
   console.log("winningBox", winningBox.split("$")[1]);
   lastDeal.style.display = "none";
@@ -248,7 +229,7 @@ changeBox.addEventListener("click", function () {
   finish(amount);
   console.log("amount: ", amount);
 });
-//bank offer logic function
+// offer logic function
 function calcOffer() {
   var valuesSum = shuffledValues.reduce(function (a, b) {
     return a + b;
@@ -277,14 +258,14 @@ function finish(winAmount) {
       let total = tt + cg + win;
       localStorage.setItem("gT", total);
       localStorage.setItem("g2", 0);
-      window.location.href = "/html/p1.html";
+      window.location.href = "p1.html";
     } else {
-      window.location.href = "/html/p1.html";
+      window.location.href = "p1.html";
     }
   }
   finished.style.display = "block";
 }
-//shuffling the array
+//randomizing the array
 function shuffleArray(array) {
   for (var i = array.length - 1; i > 0; i--) {
     var j = Math.floor(Math.random() * (i + 1));
@@ -295,7 +276,7 @@ function shuffleArray(array) {
   return array;
 }
 
-//FUNCTION FROM STACK OVERFLOW. CREDITS: jfriend00 on Stack Overflow!
+//FUNCTION FROM  Stack Overflow!
 function animateValue(id, start, end, duration) {
   var obj = id;
   var range = end - start;

@@ -4,21 +4,21 @@ html {
 body {
 	margin: 0 auto;
 	background-color: #321D6A;
-	background-image: url(https://i.ibb.co/s6NRwBF/deal-Or-No-Deal-Background.jpg);
-	background-size: 100% 120%;
-    font-family: 'Michroma', sans-serif;
+	background-image: url(https://t3.ftcdn.net/jpg/01/21/00/56/360_F_121005618_H0U6ApvidTJe95PbcePtaPY7ocitDa6K.jpg);
+	background-size: 100% 100%;
+    font-family: 'Courier New', Courier, monospace;
 	height: 100%;
 	width: 100%;
 }
 button {
-	font-family: 'Michroma', sans-serif;
+	font-family: 'Courier New', Courier, monospace;
 }
 #logo {
 	text-align: center;
 }
 .logoImg {
-	width: 500px;
-	padding: 30px 0px;
+	width: 200px;
+	padding: 4px 0px;
 }
 #boxContainer {
 	width: 72vw;
@@ -29,8 +29,8 @@ button {
 }
 .box {
 	position: relative;
-	width: 20%;
-	margin: 1% 1%;
+	width: 10%;
+	margin: 0.25% 0.5%;
 	height: 8.5vh;
 	background: #DDD;
 	display: inline-block;
@@ -45,35 +45,39 @@ button {
 .box:hover {
 	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.6), 0 6px 20px 0 rgba(0,0,0,0.6);
 	border: 3px solid #c8a913;
+	background: forestgreen;
 	cursor: pointer;
 }
 .openedBox {
 	color: #e8b923;
 	background-color: #09093F;
 }
-#bigMoneys {
-	right: 0;
-}
-#smallMoneys {
+#smoneys {
 	left: 0;
 }
 .moneys {
 	display: inline-block;
-	position: fixed;
-  	width: 17vw;
-  	top: 10vh;	
+	position: absolute;
+  	width: 10vw;
+  	top: 5vh;	
+}
+.money1 {
+	display: inline-block;
+	position: absolute;
+	width: 10vw;
+	bottom: 5vh;
 }
 .moneyShow {
 	width: 100%;
 	height: 6vh;
 	line-height: 6vh;
 	margin-bottom: 0.3vh;
-	border: 2px solid #c8a913;
+	border: 1px solid #9e8e3f;
 	position: relative;
 	text-align: center;
 	color: #FFF;
-	font-weight: 900;
-	transition: all 1s;
+	font-weight: 600;
+	/* transition: all 1s; */
 }
 .hideValue {
 	text-indent: 100%;
@@ -90,7 +94,7 @@ button {
 	border-left: none;
 }
 .rounded2 {
-	border-radius: 10px 0 0 10px;
+	border-radius: 0 10px 10px 0;
 	border-right: none;
 }
 .hideValueLeft {
@@ -114,7 +118,7 @@ button {
 	transition: all 0.5s;
 }
 .chooseBoxButton {
-	background: #c8a913;
+	background: rgb(120, 136, 124);
 	background-image: url(https://i.ibb.co/Hrb4fzt/gold.jpg);
 	border: 4px solid #000;
 	color: #000;
@@ -127,7 +131,7 @@ button {
 	background-repeat: no-repeat;
 	background-size: cover;
 }
-#bankContent, #finishedContent, #lastDealContent, #chooseBoxContent {
+#content, #finishedContent, #lastDealContent, #chooseBoxContent {
 	background-color: #FFF;
 	padding: 20px;
 	border: 4px solid #c8a913;
@@ -145,52 +149,46 @@ button {
 	text-shadow:1px 1px 30px #c8a913, 1px 1px 30px #c8a913;
 
 }
-#bankContent {
+#content {
     background-color: #FEFBC4;
-	background-image: url(https://i.ibb.co/0Y3sQLV/bankBg.jpg);
+	background-image: url(https://t3.ftcdn.net/jpg/01/21/00/56/360_F_121005618_H0U6ApvidTJe95PbcePtaPY7ocitDa6K.jpg);
 	background-position: center;
 	background-size: 650px;
 }
 #chooseBoxContent {
-    background-color: #281D5F;
-	background-image: url(https://i.ibb.co/nC2NK9F/choose-Box-Bg.jpg);
+    background-color: #101110;
 	background-position: center;
 	background-size: 400px;
 }
 .chooseBoxText {
-	font-weight: 900;
+	font-family: 'Courier New', Courier, monospace;
+	font-weight: 800;
 	font-size: 20px;
-	color: #c8a913;
-	text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+	color: #ffffff;
 }
-.bankLogo {
+.offerLogo {
 	height: 100px;
 	width: auto;
 }
 button {
-	height: 60px;
+	height: 50px;
 	line-height: 20px;
 	font-size: 20px;
 	color: #FFF;
-	width: 200px;
+	width: 180px;
 	text-transform: uppercase;
 	font-weight: 900;
 	margin: 10px;
 	transition: all 0.5s;
 }
 button:hover {
-	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.5), 0 6px 20px 0 rgba(0,0,0,0.45);
+	background-color: forestgreen;
 }
-.bankTitle {
+.offerTitle,.bankOffer {
+	color: whitesmoke;
 	font-size: 30px;
 	font-weight: 700;
 	padding-top: 30px;
-}
-.bankOffer {
-	font-size: 40px;
-	font-weight: 900;
-	padding: 30px;
-
 }
 #yesDeal, #keepBox {
 	background: #c8a913;
@@ -219,6 +217,7 @@ button:hover {
 	color: #09093F;
 }
 .modalText {
+	font-family: 'Courier New', Courier, monospace;
 	font-weight: 700;
 	font-size: 20px;
 }
@@ -230,38 +229,7 @@ button:hover {
 	font-weight: 900;
 	font-size: 60px;
 }
-#seeTutorialButton {
-	background: #c8a913;
-	background-image: url(https://i.ibb.co/Hrb4fzt/gold.jpg);
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	border: 4px solid #000000;
-	color: #000000;
-	font-size: 20px;
-	width: 300px;
-	transition: all 0.5s;
-}
-#tutorial {
-	display: none;
-	position: absolute;
-	top: 0px;
-	width: 100vw;
-	height: 100vh;
-	background: rgba(255,255,255,0.85);
-	z-index: 1;
-	padding-top: 100px;
-}
-#tutorialButton {
-	background: #c8a913;
-	background-image: url(https://i.ibb.co/Hrb4fzt/gold.jpg);
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	border: 4px solid #000000;
-	color: #000000;
-	font-size: 20px;
-}
+
 footer {
     position: absolute;
     bottom: 0;
@@ -289,7 +257,7 @@ and (min-width: 450px)
 and (orientation: portrait) {
     body {
 	    background-size: 300% 120%;
-        font-family: 'Michroma', sans-serif;
+        font-family: 'Courier New', Courier, monospace;
 	    height: 100%;
     	width: 100%;
     }
@@ -300,25 +268,22 @@ and (orientation: portrait) {
 	.logoImg {
 		width: 80%;
 	}
-	#boxContainer {
-		width: 65%;
+	/* #boxContainer {
+		width: 45%;
 		margin: 0 auto;
-		padding-top: 2vh;
-	}
+		padding-top: 1vh;
+	} */
 	.box {
-		width: 31%;
+		width: 21%;
 		margin: 1vh 0.3vw;
-		height: 6.5vh;
-		line-height: 6.5vh;
-		font-size: 20px;
-	}
-	#bigMoneys {
-		right: 0;
+		height: 5.5vh;
+		line-height: 5.5vh;
+		font-size: 10px;
 	}
 	.moneys {
 		display: inline-block;
 		position: fixed;
-  		width: 20%;
+  		width: 10%;
  	 	top: 12vh;	
 	}
 	.moneyShow {
@@ -327,13 +292,13 @@ and (orientation: portrait) {
 		margin-bottom: 0.5vh;
 		font-size: 20px;
 	}
-	#bankContent, #finishedContent, #lastDealContent, #chooseBoxContent {
+	#content, #finishedContent, #lastDealContent, #chooseBoxContent {
 		padding: 20px;
 		width: 65%;
 		margin-top: 200px;
 	}
-	.bankLogo {
-		height: 45px;
+	.offerLogo {
+		height: 35px;
 	}
 	button {
 		height: 35px;
@@ -344,7 +309,7 @@ and (orientation: portrait) {
 	#keepBox, #changeBox {
 		font-size: 15px;
 	}
-	.bankTitle {
+	.offerTitle {
 		font-size: 25px;
 		font-weight: 700;
 		padding-top: 10px;
@@ -359,11 +324,11 @@ and (orientation: portrait) {
 		border-left: none;
 	}
 	.rounded2 {
-		border-radius: 10px 0 0 10px;
+		border-radius: 0 10px 10px 0;
 		border-right: none;
 	} 
 	.chooseBoxButton {
-		height: 65px;
+		height: 60px;
 		font-size: 20px;
 	}
 	.buttons {
@@ -446,7 +411,7 @@ and (orientation: landscape) {
 		line-height: 20px;
 		margin: 5px;
 	}
-	#bankContent, #lastDealContent, #finishedContent, #chooseBoxContent {
+	#content, #lastDealContent, #finishedContent, #chooseBoxContent {
 		padding: 10px 0px;
 		margin-top: 50px;
 	}
@@ -462,10 +427,10 @@ and (orientation: landscape) {
 	    height: 40px;
 	    width: auto;
 	}
-	.bankLogo {
+	.offerLogo {
 	    height: 45px;
 	}
-	.bankTitle {
+	.offerTitle {
 	    font-size: 18px;
 	    padding-top: 5px;
 	}
